@@ -1,0 +1,35 @@
+<nav
+			class="nav z-[5] shadow-sm bg-base-100 px-3 py-3 flex items-center justify-between"
+		>
+			<div
+			@click="open = true"
+				class="menu px-2 text-[#eee] mx-2 text-[1rem]"
+			>
+				<i
+					class="fi fi-rr-menu-burger icon"
+				></i>
+			</div>
+			<div class="flex gap-x-5 px-3">
+				<button>
+					<i
+						class="fi fi-rr-search icon"
+					></i>
+				</button>
+				<div>
+					<button>
+						<i
+							class="fi fi-rr-bell icon"
+						></i>
+					</button>
+				</div>
+			</div>
+		</nav>
+		<h2 class="text-center w-full block my-4">You're Gay As Hell</h2>
+				<div
+			hx-get="/footer"
+			hx-trigger="load"
+			hx-on::beforeRequest="alert('Done!')"
+			hx-swap="innerHTML"
+			id="footer"
+		>
+		</div>

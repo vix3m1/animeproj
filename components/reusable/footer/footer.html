@@ -1,0 +1,57 @@
+		<footer
+			class="container mt-10 py-5 px-8 border-t border-t-gray-800"
+		>
+			<div
+				class="grid place-content-center grid-cols-2 container"
+			>
+				<div class="links">
+					<h2
+						class="text-2xl font-rope mb-2"
+					>
+						Links
+					</h2>
+					<ul
+						class="pl-2 grid grid-cols-1 gap-y-2"
+					>
+						<li>
+							<a 
+							hx-get="/home"
+							
+								hx-push-url="/"
+								hx-target="#temp"
+								hx-swap="innerHTML"
+							href="/">Home</a>
+						</li>
+
+						<li>
+							<a
+								hx-get="/anime"
+								hx-target="#temp"
+								hx-push-url="/anime"
+								hx-swap="innerHTML"
+								>Anime</a
+							>
+						</li>
+
+						<li>
+							<a
+							  hx-get="/contact"
+								hx-target="#temp"
+								hx-swap="innerHTML"
+						href="/contact"
+								>Contact</a
+							>
+						</li>
+					</ul>
+				</div>
+				<div
+					class="logo flex justify-center items-center flex-col"
+				>
+					<h2 class="text-[1.8rem]">
+						Jikan
+					</h2>
+					<p>&copy; 2024-2025</p>
+					<p>@Renz</p>
+				</div>
+			</div>
+		</footer>

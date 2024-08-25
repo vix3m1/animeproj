@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Manrope:wght@200..800&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+@tailwind base;
+@tailwind components;
+@layer components {
+	.nav {
+		@apply sticky top-0 left-0 w-full
+	}
+	.menu {
+		@apply md:cursor-pointer lg:cursor-pointer mx-1;
+	}
+}
+@tailwind utilities;
+@layer utilities {
+	.icon {
+		@apply relative top-[2.8px];
+	}
+}

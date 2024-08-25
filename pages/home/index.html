@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+	<head>
+		<meta
+			name="htmx-config"
+			content='{"selfRequestsOnly": false}'
+		/>
+		<meta charset="UTF-8" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0"
+		/>
+		<meta
+			http-equiv="X-UA-Compatible"
+			content="ie=edge"
+		/>
+		<link
+			rel="stylesheet"
+			href="/css/output.css"
+			type="text/css"
+		/>
+		<style type="text/css" media="all">
+			@import '/css/@flaticon/flaticon-uicons/css/all/all.css';
+		</style>
+		<script src="https://cdn.jsdelivr.net/npm/eruda"></script>
+		<script>
+			eruda.init();
+		</script>
+		<script
+			src="https://unpkg.com/htmx.org@2.0.2"
+		></script>
+		<script
+			src="//unpkg.com/alpinejs"
+			defer
+		></script>
+
+		<title>Anime</title>
+	</head>
+	<body>
+		
+			<nav
+				class="nav z-[5] shadow-sm bg-base-100 px-3 py-3 flex items-center justify-between"
+			>
+				<div
+					@click="open = true"
+					class="menu px-2 text-[#eee] mx-2 text-[1rem]"
+				>
+					<i
+						class="fi fi-rr-menu-burger icon"
+					></i>
+				</div>
+				<div class="px-4 py-2 relative">
+					<i
+						class="fi fi-rr-bell icon float-right"
+					></i>
+
+					<span
+						class="block top-1 right-2 absolute w-4 h-4 rounded-full bg-primary text-[9px] text-center text-white"
+						>2</span
+					>
+				</div>
+			</nav>
+			<main class="px-4 py-4 mt-8">
+				<div
+					class="top px-6 text-center mb-[6.5cm]"
+				>
+					<h2
+						class="font-sans mb-6 text-[3.5rem]"
+					>
+						Jikan
+					</h2>
+					<p
+						class="font-sans text-gray-400 mb-4"
+					>
+						Your anime streaming
+						companion.
+					</p>
+					<button
+									
+						x-data="{req: false}"
+						hx-get="/anime"
+						hx-trigger="click"
+						hx-target="#temp"
+						hx-swap="innerHTML"
+						hx-push-url="anime"
+						@click="req = true, loading = true"
+						class="btn w-full rounded-lg btn-primary relative"
+					>
+						Visit Full Page
+
+						<div
+							:class="req ? '!flex' : ''"
+							class="w-full !justify-center bg-primary rounded-lg !items-center top-0 left-0 h-full absolute hidden"
+						>
+							<div
+								class="w-5 h-5 border border-t-transparent border-white animate-spin rounded-full"
+							></div>
+						</div>
+					</button>
+					<div
+						class="my-4 py-1 px-3 flex !items-center justify-center"
+					>
+						<a id="share" href="#"
+							><i
+								class="fi icon fi-rr-share text-[1.8rem] mr-3"
+							></i
+						></a>
+						<label
+							class="text-[.9rem] text-gray-500"
+							>Share Jikan to your
+							friends!</label
+						>
+					</div>
+				</div>
+
+				<div
+					class="faqs px-2 flex flex-col gap-y-[2cm]"
+				>
+					<div>
+						<h2
+							before="*"
+							class="text-3xl before:content-[attr(before)] before:relative before:top-1.5 before:-left-2 before:text-primary font-rope my-2"
+						>
+							What is Jikan?
+						</h2>
+						<ul class="pl-2">
+							<li>
+								Jikan is an online
+								streaming platform
+								dedicated to
+								providing a vast
+								library of anime
+								series and films.
+								We aim to offer a
+								user-friendly
+								experience for
+								anime enthusiasts
+								to discover and
+								enjoy their
+								favorite titles.
+							</li>
+						</ul>
+					</div>
+					<div>
+						<h2
+							before="*"
+							class="text-3xl before:content-[attr(before)] before:relative before:top-1.5 before:-left-2 before:text-primary font-rope my-2"
+						>
+							Is Jikan free?
+						</h2>
+						<ul class="pl-2">
+							<li>
+								Jikan is
+								completely free to
+								use! You can enjoy
+								our extensive
+								library of anime
+								without any
+								subscription fees.
+								However, some
+								content may
+								include ads to
+								support the
+								platform.
+							</li>
+						</ul>
+					</div>
+					<div>
+						<h2
+							before="*"
+							class="text-3xl before:content-[attr(before)] before:relative before:top-1.5 before:-left-2 before:text-primary font-rope my-2"
+						>
+							What types of anime do
+							we offer?
+						</h2>
+						<ul class="pl-2">
+							<li>
+								We offer a diverse
+								selection of anime
+								genres, including
+								action, romance,
+								fantasy, horror,
+								and slice-of-life,
+								catering to a wide
+								range of tastes.
+							</li>
+						</ul>
+					</div>
+				</div>
+			</main>
+					<div
+			hx-get="/footer"
+			hx-trigger="load"
+			hx-on::beforeRequest="alert('Done!')"
+			hx-swap="innerHTML"
+			id="footer"
+		>
+		</div>
+		
+		
+			</body>
+			</html>
