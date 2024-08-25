@@ -22,13 +22,7 @@
 		<style type="text/css" media="all">
 			@import '/css/@flaticon/flaticon-uicons/css/all/all.css';
 		</style>
-		<script src="https://cdn.jsdelivr.net/npm/eruda"></script>
-		<script>
-			eruda.init();
-		</script>
-		<script
-			src="https://unpkg.com/htmx.org@2.0.2"
-		></script>
+		<script src="https://unpkg.com/htmx.org@2.0.2"></script>
 		<script
 			src="//unpkg.com/alpinejs"
 			defer
@@ -37,44 +31,49 @@
 		<title>Anime</title>
 	</head>
 	<body x-data="{open: false, loading: true}">
-				<div
-		:class="open ? '!block' : ''"
-		@click="open = false"
+		<div
+			:class="open ? '!block' : ''"
+			@click="open = false"
 			id="menuOver"
 			class="fixed !w-[100dvw] top-0 right-0 container h-dvh hidden bg-[#1d1d1d71] z-10"
 		></div>
 
 		<div
-		:class="open ? '!translate-x-0' : '-translate-x-full'"
+			:class="open ? '!translate-x-0' : '-translate-x-full'"
 			id="sideMenu"
 			class="fixed top-0 left-0 bg-[#161616] transition-all duration-200 ease transform -translate-x-full w-[7cm] sm:w-[7.5cm] md:w-[8cm] lg:w-[9cm] h-dvh z-30 shadow-md"
 		></div>
-		
-		
-		
-		
-				<div
+
+		<div
 			hx-get="/animepagedata"
 			hx-trigger="load"
 			hx-swap="innerHTML"
 			id="temp"
 		>
-		</div>
-											<script>
-				document.querySelector('#temp').addEventListener('htmx:afterRequest', () => {
-					console.log('Components Loaded!')
-					loading = false;
-				})
-			</script>
+					<script>
+			document
+				.querySelector('#temp')
+				.addEventListener(
+					'htmx:afterRequest',
+					() => {
+						console.log(
+							'Components Loaded!',
+						);
+						loading = false;
+					},
+				);
+		</script>
 			
-									<div :class="loading ? '!hidden' : ''"
+		</div>
+
+
+		<div
+			:class="loading ? '!hidden' : ''"
 			class="bg-base-100"
 		>
 			<div
 				class="loading transform absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 loading-spinner"
 			></div>
-			
-			
 		</div>
-</body>
+	</body>
 </html>

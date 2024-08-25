@@ -24,4 +24,4 @@ app.get('/animepagedata', (req,res) => {
 })
 
 
-app.listen(port, () => console.log(`App running at http://localhost:${port}`))
+app.listen(port, () => console.log(`App running at ${port}`))

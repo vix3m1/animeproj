@@ -16,7 +16,7 @@
 						<li>
 							<a 
 							hx-get="/home"
-							
+								@click="loading = true"
 								hx-push-url="/"
 								hx-target="#temp"
 								hx-swap="innerHTML"
@@ -27,6 +27,7 @@
 							<a
 								hx-get="/anime"
 								hx-target="#temp"
+								@click="loading = true"
 								hx-push-url="/anime"
 								hx-swap="innerHTML"
 								>Anime</a
@@ -38,6 +39,7 @@
 							  hx-get="/contact"
 								hx-target="#temp"
 								hx-swap="innerHTML"
+								@click="loading = true"
 						href="/contact"
 								>Contact</a
 							>
